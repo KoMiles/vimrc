@@ -3,6 +3,7 @@ source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
 set nobackup
+
 set diffexpr=MyDiff()
 function MyDiff()
 let opt = '-a --binary '
@@ -27,23 +28,31 @@ let cmd = $VIMRUNTIME . '\diff'
 endif
 silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunction
+
+
+"""==========================================="""
+"""显示配置
+"""==========================================="""
+
+"搜索逐字符高亮
+set hlsearch
+set incsearch
+
+"ctags --languages=php  -R
+"生成tags文件
+set tags=tags;/
+
+"配置颜色
+"colo ron
+
 "显示行号
-colorscheme desert 
-syntax enable 
+colorscheme desert
+syntax enable "打开关键字上色
 syntax on
 
 set encoding=utf-8
 set fileencodings=utf-8
 set fileencoding=utf-8
-
-"NERDTree快捷键
-nmap <F7> :NERDTree <CR>
-" NERDTree.vim
-let g:NERDTreeWinPos="left"
-let g:NERDTreeWinSize=25
-let g:NERDTreeShowLineNumbers=1
-let g:neocomplcache_enable_at_startup = 1
-
 
 "默认最大化窗口打开
 au GUIEnter * simalt ~x
@@ -67,6 +76,48 @@ highlight LeaderTab guifg=#666666
 " 匹配行首tab
 match LeaderTab /^\t/
 
+"编辑时将所有 Tab 替换为空格
+set et
+"该选项只在编辑时将 Tab 替换为空格，如果打开一个已经存在的文件，并不会将已有的 Tab 替换为空格。
+"如果希望进行这样的替换的话，可以使用这条命令“:retab”
+"按space时能删除4个空格
+set smarttab
+
+"显示高亮行
+set cul "横行
+set cuc "竖行
+set ruler "会在文件下面显示行信息
+set showcmd "会在文件下面显示行信息
+set laststatus=1 "启动显示状态行(1),总是显示状态行(2)
+"""==========================================="""
+"""插件部分
+"""==========================================="""
+
+"版权介绍插件 AuthorInfo
+let g:vimrc_author='wangkongming' 
+let g:vimrc_email='komiles@163.com' 
+let g:vimrc_homepage='http://www.wangkongming.cn/' 
+
+nmap <F4> :AuthorInfoDetect<cr> 
+
+
+"注释代码插件 NERD_commenter
+let mapleader = ","
+
+"php-doc
+source ~/.vim/php-doc.vim
+:imap <C-D> <ESC>:call PhpDocSingle()<CR>i
+:nmap <C-D> :call PhpDocSingle()<CR>
+:vmap <C-D> :call PhpDocRange()<CR>
+
+"NERDTree快捷键
+nmap <F7> :NERDTree <CR>
+" NERDTree.vim
+let g:NERDTreeWinPos="left"
+let g:NERDTreeWinSize=25
+let g:NERDTreeShowLineNumbers=1
+let g:neocomplcache_enable_at_startup = 1
+
 """""""""""""""""""""""""""""
 " Tag list (ctags)
 """""""""""""""""""""""""""""""
@@ -78,28 +129,13 @@ let Tlist_Exit_OnlyWindow = 1
 let Tlist_Use_Right_Window = 1         "在右侧窗口中显示taglist窗口 
 map <silent> <F9> :TlistToggle<cr>
 
-source ~/.vim/php-doc.vim
-:imap <C-D> <ESC>:call PhpDocSingle()<CR>i
-:nmap <C-D> :call PhpDocSingle()<CR>
-:vmap <C-D> :call PhpDocRange()<CR>
-
-"注释代码插件 NERD_commenter
-let mapleader = ","
-
-"AuthorInfo
-let g:vimrc_author='wangkongming' 
-let g:vimrc_email='komiles@163.com' 
-let g:vimrc_homepage='http://www.wangkongming.cn/' 
-
-nmap <F4> :AuthorInfoDetect<cr> 
-
 "检查程序是否有拼写错误
-augroup filetypedetect
-au! BufRead,BufNewFile *inc setfiletype php
-augroup end
+"augroup filetypedetect
+"au! BufRead,BufNewFile *inc setfiletype php
+"augroup end
 
-augroup Programming
-autocmd!
-autocmd BufWritePost *.php !php -d display_errors=on -l <afile>
-"autocmd BufWritePost *.inc !php -d display_errors=on -l <afile>
-augroup end
+"augroup Programming
+"autocmd!
+"autocmd BufWritePost *.php !php -d display_errors=on -l <afile>
+""autocmd BufWritePost *.inc !php -d display_errors=on -l <afile>
+"augroup end
