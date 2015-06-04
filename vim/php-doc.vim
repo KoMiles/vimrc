@@ -78,7 +78,7 @@ let g:pdv_cfg_CommentSingle = "//"
 let g:pdv_cfg_Type = "mixed"
 let g:pdv_cfg_Package = ""
 let g:pdv_cfg_Version = "$Id$"
-let g:pdv_cfg_Author = "wangkongming <wangkongming@babytree-inc.com>"
+let g:pdv_cfg_Author = "wangkongming <komiles@163.com>"
 let g:pdv_cfg_Copyright = ""
 let g:pdv_cfg_License = ""
 
