@@ -139,3 +139,16 @@ map <silent> <F9> :TlistToggle<cr>
 "autocmd BufWritePost *.php !php -d display_errors=on -l <afile>
 ""autocmd BufWritePost *.inc !php -d display_errors=on -l <afile>
 "augroup end
+
+set sessionoptions-=curdir
+set sessionoptions+=sesdir
+
+"python file
+set autoindent
+filetype indent on
+autocmd FileType python setlocal et sta sw=4 sts=4
+
+"""""""""""""""""""""""""""""
+" F6 BufExplorer
+"""""""""""""""""""""""""""""""
+map <F6> :BufExplorer<CR>

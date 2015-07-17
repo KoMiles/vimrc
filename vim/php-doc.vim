@@ -81,6 +81,7 @@ let g:pdv_cfg_Version = "$Id$"
 let g:pdv_cfg_Author = "wangkongming <komiles@163.com>"
 let g:pdv_cfg_Copyright = ""
 let g:pdv_cfg_License = ""
+let g:pdv_cfg_Date = strftime("%Y-%m-%d %H:%M:%S")
 
 let g:pdv_cfg_ReturnVal = "void"
 
@@ -424,7 +425,8 @@ func! PhpDocClass()
 	exe l:txtBOL . g:pdv_cfg_Commentn . "@version " . g:pdv_cfg_Version . g:pdv_cfg_EOL
 	" exe l:txtBOL . g:pdv_cfg_Commentn . "@copyright " . g:pdv_cfg_Copyright . g:pdv_cfg_EOL
 	exe l:txtBOL . g:pdv_cfg_Commentn . "@author " . g:pdv_cfg_Author g:pdv_cfg_EOL
-	" exe l:txtBOL . g:pdv_cfg_Commentn . "@license " . g:pdv_cfg_License . g:pdv_cfg_EOL
+	"exe l:txtBOL . g:pdv_cfg_Commentn . "@license " . g:pdv_cfg_License . g:pdv_cfg_EOL
+	exe l:txtBOL . g:pdv_cfg_Commentn . "@date " . g:pdv_cfg_Date . g:pdv_cfg_EOL
 
 	" Close the comment block.
 	exe l:txtBOL . g:pdv_cfg_CommentTail . g:pdv_cfg_EOL
