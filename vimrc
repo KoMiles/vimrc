@@ -1,4 +1,5 @@
 set nocompatible
+"解决菜单乱码
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
@@ -54,6 +55,9 @@ set encoding=utf-8
 set fileencodings=utf-8
 set fileencoding=utf-8
 
+"解决consle输出乱码
+language messages zh_CN.utf-8
+
 "默认最大化窗口打开
 au GUIEnter * simalt ~x
 
@@ -89,6 +93,7 @@ set cuc "竖行
 set ruler "会在文件下面显示行信息
 set showcmd "会在文件下面显示行信息
 set laststatus=1 "启动显示状态行(1),总是显示状态行(2)
+
 """==========================================="""
 """插件部分
 """==========================================="""
