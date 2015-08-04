@@ -47,13 +47,16 @@ set tags=tags;/
 "colo ron
 
 "显示行号
-colorscheme desert
+"colorscheme desert
+colorscheme  molokai
 syntax enable "打开关键字上色
 syntax on
 
 set encoding=utf-8
 set fileencodings=utf-8
 set fileencoding=utf-8
+set t_Co=256
+set background=dark
 
 "解决consle输出乱码
 language messages zh_CN.utf-8
@@ -92,7 +95,7 @@ set cul "横行
 set cuc "竖行
 set ruler "会在文件下面显示行信息
 set showcmd "会在文件下面显示行信息
-set laststatus=1 "启动显示状态行(1),总是显示状态行(2)
+"set laststatus=1 "启动显示状态行(1),总是显示状态行(2)
 
 """==========================================="""
 """插件部分
@@ -123,8 +126,7 @@ let g:NERDTreeWinSize=25
 let g:NERDTreeShowLineNumbers=1
 let g:neocomplcache_enable_at_startup = 1
 
-"""""""""""""""""""""""""""""
-" Tag list (ctags)
+""""""""""""""""""""""""""""" " Tag list (ctags)
 """""""""""""""""""""""""""""""
 let Tlist_Ctags_Cmd = '/usr/bin/ctags'
 let Tlist_Show_One_File = 1
