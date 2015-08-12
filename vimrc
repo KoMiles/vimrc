@@ -159,3 +159,6 @@ autocmd FileType python setlocal et sta sw=4 sts=4
 " F6 BufExplorer
 """""""""""""""""""""""""""""""
 map <F6> :BufExplorer<CR>
+
+"放到后台执行
+:map <C-z> :suspend<CR> 
