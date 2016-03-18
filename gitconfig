@@ -1,0 +1,17 @@
+[user]
+    email = komiles@163.com
+    name = komiles
+[color]
+    ui = true
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    last = log -1
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[core]
+    editor = mate -w
+
+[push]
+	default = simple
